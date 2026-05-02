@@ -32,7 +32,7 @@ export default function Footer() {
               <img
                 src="/assets/IMG_4634.PNG"
                 alt="Ravariya Green Energy"
-                className="h-14 md:h-12 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </div>
             <p className="text-ink-secondary text-sm leading-relaxed max-w-xs">
