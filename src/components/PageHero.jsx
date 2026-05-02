@@ -13,7 +13,7 @@ export default function PageHero({ badge, title, subtitle, accentWord }) {
   return (
     <section
       ref={ref}
-      className="relative min-h-[72vh] flex flex-col justify-end pt-32 pb-16 md:pb-24 px-6 md:px-10 overflow-hidden bg-bg"
+      className="relative flex flex-col justify-end pt-28 pb-12 md:min-h-[72vh] md:pt-32 md:pb-24 px-6 md:px-10 overflow-hidden bg-bg"
     >
       {/* Subtle grid lines */}
       <div className="absolute inset-0 pointer-events-none">
@@ -34,17 +34,6 @@ export default function PageHero({ badge, title, subtitle, accentWord }) {
         className="relative z-10 max-w-[1600px] mx-auto w-full"
         style={{ y: textY, opacity }}
       >
-        {badge && (
-          <motion.div
-            className="inline-flex items-center gap-2 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: EASE }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            <span className="text-label text-ink-muted">{badge}</span>
-          </motion.div>
-        )}
 
         <TextReveal
           text={title}

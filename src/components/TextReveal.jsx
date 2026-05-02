@@ -19,7 +19,11 @@ export default function TextReveal({
   return (
     <Tag ref={ref} className={className} style={style} aria-label={text}>
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden mr-[0.28em] mb-[0.05em]" aria-hidden>
+        <span
+          key={i}
+          className="inline-block overflow-hidden align-bottom mr-[0.28em] pb-[0.2em] -mb-[0.15em]"
+          aria-hidden
+        >
           <motion.span
             className="inline-block"
             initial={{ y: '110%', opacity: 0 }}

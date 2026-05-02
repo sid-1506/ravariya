@@ -24,7 +24,7 @@ export default function About() {
       <PageHero
         badge="Who We Are"
         title="Built on purpose. Driven by planet."
-        subtitle="A story of turning agricultural surplus into India's sustainable energy future."
+        subtitle="Ravariya Global Ventures Pvt. Ltd. (RGVPL) — a Gujarat-based integrated bioenergy company producing IS 16087:2025-certified Compressed Biogas (CBG) for industry and CGD entities."
       />
 
       {/* ── STORY ── */}
@@ -45,9 +45,9 @@ export default function About() {
               />
               <div className="space-y-5">
                 {[
-                  'Ravariya Green Energy was founded with a singular conviction: that India\'s agricultural heartland holds the key to its clean energy future. Each year, millions of tonnes of crop residue, cattle dung, and organic waste go unutilized — or worse, burned in fields.',
-                  'We saw an opportunity where others saw waste. By harnessing anaerobic digestion technology and India\'s SATAT framework, we built a plant that transforms agricultural surplus into high-grade Bio CNG.',
-                  'Today, we work alongside farmers, fuel distributors, government bodies, and investors to make Bio CNG a mainstream energy source across Gujarat and beyond.',
+                  'Ravariya Global Ventures Pvt. Ltd. (RGVPL) was founded with a singular conviction: that India\'s agricultural heartland holds the key to its clean energy future. Each year, vast volumes of cattle dung and crop residue go unutilised — or worse, burned in fields.',
+                  'We saw an opportunity where others saw waste. By harnessing anaerobic digestion and partnering with five AWBI-registered gaushalas across Kutch — together hosting 25,000+ cattle — we built a 6 TPD CBG plant in Rapar Taluka that meets the IS 16087:2025 BIS standard on every delivery.',
+                  'Today, RGVPL supplies certified Compressed Biogas to industrial buyers and CGD entities across Kutch — replacing industrial LPG and diesel with a cleaner, cheaper, and uninterrupted fuel.',
                 ].map((p, i) => (
                   <FadeIn key={i} delay={0.15 + i * 0.1}>
                     <p className="text-ink-secondary text-base leading-relaxed">{p}</p>
@@ -80,10 +80,10 @@ export default function About() {
                       className="font-black text-white/20 leading-none"
                       style={{ fontSize: '5rem', letterSpacing: '-0.05em' }}
                     >
-                      RGE
+                      RGVPL
                     </div>
-                    <div className="text-white text-sm font-semibold mt-2 tracking-widest uppercase">Est. 2024</div>
-                    <div className="text-white/70 text-xs mt-1">Gujarat, India</div>
+                    <div className="text-white text-sm font-semibold mt-2 tracking-widest uppercase">6 TPD CBG</div>
+                    <div className="text-white/70 text-xs mt-1">Rapar Taluka, Kutch</div>
                   </div>
                 </div>
                 {/* Corner label */}
@@ -108,14 +108,14 @@ export default function About() {
             {[
               {
                 tag: 'Vision',
-                heading: 'India\'s most trusted Bio CNG producer.',
-                body: 'A catalyst for the circular economy that empowers farmers, cleans the air, and powers the nation\'s sustainable transport revolution.',
+                heading: 'India\'s most trusted Compressed Biogas producer.',
+                body: 'A catalyst for the circular economy that empowers gaushalas and farmers, displaces industrial LPG and diesel, and powers India\'s clean fuel transition.',
                 accent: true,
               },
               {
                 tag: 'Mission',
-                heading: 'State-of-the-art plants. Real impact.',
-                body: 'To build and operate Bio CNG production facilities across India, creating economic value from agricultural waste while delivering clean, affordable fuel to communities and industries.',
+                heading: 'Certified CBG. Reliable supply. Real savings.',
+                body: 'To produce IS 16087:2025-certified Compressed Biogas at scale and supply it to industrial buyers and CGD entities across Gujarat — replacing fossil fuels with a cleaner, cheaper, uninterrupted alternative.',
                 accent: false,
               },
             ].map((item, i) => (
@@ -144,7 +144,7 @@ export default function About() {
       {/* ── MARQUEE ── */}
       <div className="border-b border-border-dim bg-white py-4 overflow-hidden">
         <Marquee
-          items={['Mission-Driven', 'Clean Energy Pioneer', 'Gujarat', 'SATAT Registered', 'Zero Waste', 'Farmer Empowerment']}
+          items={['Mission-Driven', 'IS 16087:2025', 'Kutch · Gujarat', '6 TPD CBG', 'Zero Waste', 'Gaushala Partnership']}
           className="text-label text-ink-muted"
           speed={20}
           reverse
@@ -192,15 +192,15 @@ export default function About() {
             {/* Bio */}
             <div className="flex flex-col justify-center">
               <TextReveal
-                text="The visionary behind Ravariya Green Energy."
+                text="The visionary behind RGVPL."
                 className="text-section font-black text-ink mb-8"
                 delay={0.1}
                 stagger={0.04}
               />
               <div className="space-y-5 mb-10">
                 {[
-                  'Bhargav Ravariya is the founder and driving force behind Ravariya Green Energy. With deep roots in Gujarat\'s entrepreneurial ecosystem and a passion for sustainable development, he identified the transformative potential of Bio CNG early — and committed his resources and vision to making it a reality.',
-                  'Under his leadership, Ravariya Green Energy has established its first Bio CNG plant in Gujarat, building partnerships with farmers, OMCs, and government bodies. Bhargav envisions scaling the company\'s footprint nationally.',
+                  'Bhargav Ravariya is the Managing Director and driving force behind Ravariya Global Ventures Pvt. Ltd. With deep roots in Gujarat\'s entrepreneurial ecosystem and a passion for sustainable development, he identified the transformative potential of Compressed Biogas early — and committed his resources and vision to making it a reality.',
+                  'Under his leadership, RGVPL has commissioned its first 6 TPD CBG plant in Rapar Taluka, Kutch — backed by a 25,000+ cattle feedstock base across five AWBI-registered gaushalas. Bhargav envisions scaling certified CBG supply to industrial and CGD buyers across India.',
                 ].map((p, i) => (
                   <FadeIn key={i} delay={0.2 + i * 0.1}>
                     <p className="text-ink-secondary text-base leading-relaxed">{p}</p>
@@ -209,7 +209,7 @@ export default function About() {
               </div>
               <FadeIn delay={0.5}>
                 <div className="flex flex-wrap gap-3">
-                  {['Bio CNG Pioneer', 'Gujarat Entrepreneur', 'SATAT Advocate', 'Clean Energy'].map((tag) => (
+                  {['CBG Pioneer', 'Gujarat Entrepreneur', 'Managing Director', 'Clean Energy'].map((tag) => (
                     <span
                       key={tag}
                       className="text-[11px] tracking-widest uppercase text-ink-secondary border border-border-dim px-4 py-2 rounded-none"
@@ -236,7 +236,7 @@ export default function About() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-ink-secondary text-base leading-relaxed">
-                Ravariya Green Energy is the flagship subsidiary of Ravariya Global Ventures Pvt. Ltd. (RGVPL) — a diversified holding company with upcoming ventures across clean energy infrastructure, agri-tech, and industrial logistics. As RGVPL expands its portfolio, RGE leads its commitment to India's green energy transition.
+                Compressed Biogas is the flagship vertical of Ravariya Global Ventures Pvt. Ltd. (RGVPL). From our 6 TPD plant in Rapar Taluka, Kutch, we supply IS 16087:2025-certified CBG to industrial buyers and CGD entities — and continue to scale clean energy infrastructure across Gujarat.
               </p>
             </FadeIn>
           </div>

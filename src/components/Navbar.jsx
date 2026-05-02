@@ -142,7 +142,7 @@ export default function Navbar() {
             </div>
             <div className="px-8 pb-10">
               <div className="rule mb-6" />
-              <p className="text-ink-muted text-label">Ravariya Green Energy · Bio CNG · SATAT Aligned</p>
+              <p className="text-ink-muted text-label">Ravariya Global Ventures · Compressed Biogas · IS 16087:2025</p>
             </div>
           </motion.div>
         )}

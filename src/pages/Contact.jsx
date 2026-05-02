@@ -8,28 +8,32 @@ import MagneticButton from '../components/MagneticButton'
 const EASE = [0.25, 0.4, 0.25, 1]
 
 const ENQUIRY_TYPES = [
-  { value: '',            label: 'Select enquiry type' },
-  { value: 'general',    label: 'General Inquiry' },
+  { value: '',           label: 'Select enquiry type' },
+  { value: 'industrial', label: 'Industrial CBG Buyer' },
+  { value: 'cgd',        label: 'CGD Entity / OMC' },
+  { value: 'feedstock',  label: 'Feedstock Supply (Gaushala / Agri Residue)' },
   { value: 'investment', label: 'Investment / Partnership' },
-  { value: 'feedstock',  label: 'Feedstock Supply' },
   { value: 'career',     label: 'Career / Jobs' },
   { value: 'equipment',  label: 'Equipment / Vendor' },
   { value: 'media',      label: 'Media / Press' },
+  { value: 'general',    label: 'General Inquiry' },
 ]
 
 const CONTACT_INFO = [
-  { label: 'Email',        value: 'info@ravariyagreenenergy.com', href: 'mailto:info@ravariyagreenenergy.com' },
-  { label: 'Phone',        value: '+91 90000 00000',              href: 'tel:+919000000000' },
-  { label: 'Address',      value: 'Ahmedabad, Gujarat, India',    href: null },
-  { label: 'Office Hours', value: 'Mon–Sat, 9:00 AM – 6:00 PM IST', href: null },
+  { label: 'Email',        value: 'info@ravariyaglobalventures.com', href: 'mailto:info@ravariyaglobalventures.com' },
+  { label: 'Phone',        value: '+91 85913 44745',                 href: 'tel:+918591344745' },
+  { label: 'Website',      value: 'www.ravariyaglobalventures.com',  href: 'https://www.ravariyaglobalventures.com' },
+  { label: 'Address',      value: 'Rapar Taluka, Kutch, Gujarat, India', href: null },
+  { label: 'Office Hours', value: 'Mon–Sat, 9:00 AM – 6:00 PM IST',  href: null },
 ]
 
 const OPEN_TO = [
-  'Investment & Partnership opportunities',
-  'Feedstock supply from farmers & aggregators',
+  'Industrial CBG buyers (ceramics, chemicals, textiles, FMCG)',
+  'CGD entities seeking a reliable CBG producer partner',
+  'Gaushalas, panjrapoles & agri-residue aggregators',
+  'Investment & partnership opportunities',
   'Equipment & technology vendors',
-  'Media & press inquiries',
-  'Career applications',
+  'Media, press & career inquiries',
 ]
 
 export default function Contact() {
@@ -56,7 +60,7 @@ export default function Contact() {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
-      <PageHero badge="Get In Touch" title="Let's build something green together." subtitle="Whether you're an investor, feedstock supplier, or industry partner — we'd love to hear from you." />
+      <PageHero badge="Get In Touch" title="Let's build a long-term supply partnership." subtitle="Industrial buyers, CGD entities, gaushalas, and partners — talk to RGVPL about IS 16087:2025-certified Compressed Biogas." />
 
       <section className="py-24 md:py-36 px-6 md:px-10 bg-white">
         <div className="max-w-[1600px] mx-auto">

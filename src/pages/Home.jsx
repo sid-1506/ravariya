@@ -101,7 +101,7 @@ export default function Home() {
       ════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative h-screen overflow-hidden flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-10"
+        className="relative overflow-hidden flex flex-col justify-end pt-24 pb-12 md:min-h-screen md:pt-32 md:pb-24 px-6 md:px-10"
       >
         {/* Background */}
         <motion.div
@@ -123,8 +123,8 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Watermark logo — mobile: top-center empty space, desktop: right side */}
-        <div className="absolute pointer-events-none select-none z-[1] top-[12%] left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-auto md:translate-x-0 md:right-[6%]">
+        {/* Watermark logo — desktop only (right side); hidden on mobile to remove empty space */}
+        <div className="hidden md:block absolute pointer-events-none select-none z-[1] md:top-1/2 md:-translate-y-1/2 md:right-[6%]">
           <img
             src="/assets/IMG_4634.PNG"
             alt="Ravariya Green Energy"
@@ -153,15 +153,15 @@ export default function Home() {
         >
           {/* Label row */}
           <motion.div
-            className="flex items-center gap-3 mb-8 lg:hidden"
+            className="flex items-center gap-3 mt-6 mb-8 lg:hidden"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            <span className="text-label text-ink-muted">Est. 2024 · Ahmedabad, Gujarat</span>
+            <span className="text-label text-ink-muted">Rapar Taluka, Kutch · Gujarat</span>
             <span className="text-ink-muted/30 text-label mx-2">—</span>
-            <span className="text-label text-ink-muted">Bio CNG · SATAT Aligned</span>
+            <span className="text-label text-ink-muted">Compressed Biogas · IS 16087:2025</span>
           </motion.div>
 
           {/* Main heading */}
@@ -216,7 +216,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.8, ease: EASE }}
           >
             <p className="text-ink-secondary text-base max-w-md leading-relaxed">
-              Converting agricultural waste into fuel-grade Bio CNG — clean, renewable, and powering India's transport future under the SATAT initiative.
+              Producing IS 16087:2025-certified Compressed Biogas (CBG) from cattle dung and agricultural residue — clean, cheaper, uninterrupted fuel for industry and transport.
             </p>
             <div className="flex items-center gap-4">
               <Link
@@ -244,7 +244,7 @@ export default function Home() {
       ════════════════════════════════════════ */}
       <div className="border-y border-border-dim bg-bg-soft py-4 overflow-hidden">
         <Marquee
-          items={['Bio CNG', 'SATAT Aligned', '100 TPD', 'Anaerobic Digestion', 'Clean Energy', 'Gujarat', 'Renewable', 'Zero Waste']}
+          items={['Compressed Biogas', 'IS 16087:2025', '6 TPD CBG', '25,000+ Cattle', 'Kutch · Gujarat', 'Anaerobic Digestion', 'Clean Energy', 'Zero Waste']}
           className="text-sm font-medium text-accent tracking-widest"
           speed={35}
         />
@@ -271,7 +271,7 @@ export default function Home() {
             </div>
             <FadeIn delay={0.2}>
               <p className="text-ink-secondary text-base leading-relaxed md:text-right">
-                Ravariya Green Energy operates India's next-generation Bio CNG plants — harnessing the power of anaerobic digestion to convert agricultural residue into fuel-grade compressed natural gas.
+                Ravariya Global Ventures Pvt. Ltd. (RGVPL) is a Gujarat-based integrated bioenergy company producing Compressed Biogas (CBG) from cattle dung and agricultural residue at our facility in Rapar Taluka, Kutch.
               </p>
             </FadeIn>
           </div>
@@ -283,19 +283,19 @@ export default function Home() {
             {[
               {
                 num: '01',
-                title: 'Renewable Fuel',
-                text: 'Bio CNG derived entirely from organic agricultural waste, creating an infinitely renewable energy cycle that eliminates India\'s dependence on fossil fuels.',
+                title: 'Direct LPG Replacement',
+                text: 'CBG delivers 52,000 kJ/kg — identical to CNG and 13% higher than commercial LPG. Same or more heat per kg, at significantly lower cost. No burner modification required for most industrial applications.',
                 accent: true,
               },
               {
                 num: '02',
-                title: 'Carbon Neutral',
-                text: 'The CO₂ released during combustion is fully offset by the CO₂ absorbed during crop growth. Bio CNG is genuinely carbon-neutral — and prevents methane from landfill.',
+                title: 'BIS-Certified Quality',
+                text: 'Every delivery conforms to IS 16087:2025 — the Bureau of Indian Standards national specification. ≥90% methane, low sulphur, low moisture, odorized per IS 15319.',
               },
               {
                 num: '03',
-                title: 'Government Backed',
-                text: 'Under India\'s SATAT initiative, our Bio CNG output is guaranteed off-take by Oil Marketing Companies — de-risking the business and securing stable long-term revenue.',
+                title: 'Government Mandate',
+                text: 'CBO blending obligation: 1% in 2025–26, rising to 5% by 2028–29. Early adopters of CBG gain a clear compliance advantage over LPG and diesel.',
               },
             ].map((card, i) => (
               <motion.div
@@ -331,10 +331,10 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-border-dim">
             {[
-              { val: 100, suffix: ' TPD', label: 'Plant Capacity', meta: 'Tonnes per day' },
-              { val: 100, suffix: '%', label: 'Renewable', meta: 'Zero fossil inputs' },
-              { val: 5, suffix: ' Steps', label: 'Production Process', meta: 'Waste to fuel' },
-              { val: 2024, suffix: '', label: 'Established', meta: 'Ahmedabad, Gujarat' },
+              { val: 6, suffix: ' TPD', label: 'CBG Output', meta: 'Tonnes per day' },
+              { val: 25000, suffix: '+', label: 'Cattle', meta: '5 AWBI gaushalas' },
+              { val: 90, suffix: '%', label: 'Methane (CH₄)', meta: 'IS 16087:2025 minimum' },
+              { val: 5, suffix: '×', label: 'Feedstock Oversupply', meta: 'Zero supply risk' },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -389,11 +389,11 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { num: '01', title: 'Feedstock Collection', desc: 'Agricultural residue — crop stubble, sugarcane bagasse, cattle dung — collected from farms and aggregation centres.' },
-              { num: '02', title: 'Anaerobic Digestion', desc: 'Biomass undergoes controlled digestion in sealed bio-digesters, producing raw biogas (~60% methane).' },
-              { num: '03', title: 'Gas Purification', desc: 'Advanced PSA systems remove CO₂, H₂S, and impurities, yielding >95% pure biomethane.' },
-              { num: '04', title: 'Compression', desc: 'Purified biomethane is compressed to 200–250 bar — identical to fossil CNG in quality and specification.' },
-              { num: '05', title: 'Distribution', desc: 'Bio CNG is dispensed on-site or cascaded into cylinders for supply to Oil Marketing Companies under SATAT.' },
+              { num: '01', title: 'Feedstock Collection', desc: 'Cattle dung from 5 AWBI-registered gaushalas (25,000+ cattle) plus agri residue — groundnut shells, cotton stalks, castor stalks.' },
+              { num: '02', title: 'Anaerobic Digestion', desc: 'Biomass undergoes controlled digestion in sealed bio-digesters, producing raw biogas rich in methane.' },
+              { num: '03', title: 'Gas Purification', desc: 'Advanced purification removes CO₂, H₂S, and moisture — yielding ≥90% methane CBG that meets IS 16087:2025.' },
+              { num: '04', title: 'Compression', desc: 'Purified biomethane is compressed to 200–250 bar and odorized per IS 15319 for safe handling.' },
+              { num: '05', title: 'Cascade Delivery', desc: 'CBG is loaded into cascade cylinders and delivered daily to industrial buyers and CGD entities across Kutch.' },
             ].map((step, i) => (
               <StepCard key={i} index={i} {...step} />
             ))}
@@ -429,7 +429,7 @@ export default function Home() {
             </Link>
             <div className="h-px w-10 bg-border-dim hidden sm:block" />
             <p className="text-ink-secondary text-sm max-w-sm">
-              Founded in Ahmedabad, Gujarat — building India's Bio CNG infrastructure from the ground up.
+              Operating from Rapar Taluka, Kutch — supplying CBG to industrial buyers and CGD entities across Gujarat.
             </p>
           </FadeIn>
         </div>
@@ -486,11 +486,11 @@ export default function Home() {
             {/* Text side */}
             <div>
               <FadeIn>
-                <span className="text-label text-ink-muted block mb-6">— Why Bio CNG</span>
+                <span className="text-label text-ink-muted block mb-6">— Why Switch to CBG</span>
               </FadeIn>
 
               <TextReveal
-                text="Drop-in fuel. Zero modification. Massive impact."
+                text="₹25–40/kg saving vs. LPG. From Day 1."
                 className="text-section font-black text-ink mb-8"
                 delay={0.1}
                 stagger={0.04}
@@ -498,9 +498,9 @@ export default function Home() {
 
               <div className="space-y-6">
                 {[
-                  { title: '80% lower GHG emissions', desc: 'Compared to conventional diesel — directly contributing to India\'s net-zero targets.' },
-                  { title: 'Empowers farming communities', desc: 'By purchasing crop waste as feedstock and returning organic fertilizer as by-product.' },
-                  { title: 'Circular economy model', desc: 'Every tonne processed generates both clean fuel and fertilizer — zero waste by design.' },
+                  { title: 'Eliminate LPG price volatility', desc: 'Fixed-rate CBG supply contract — your fuel cost is locked. No market price shocks.' },
+                  { title: 'Government mandate driving adoption', desc: 'CBO blending obligation: 1% in 2025–26, rising to 5% by 2028–29. Early adopters gain compliance advantage.' },
+                  { title: 'Zero supply interruption risk', desc: '5× feedstock oversupply. Our 25,000+ cattle base guarantees continuous production even in peak demand seasons.' },
                 ].map((item, i) => (
                   <FadeIn key={i} delay={0.2 + i * 0.1}>
                     <div className="flex gap-5 items-start py-5 border-b border-border-dim">
@@ -554,7 +554,7 @@ export default function Home() {
 
           <FadeIn delay={0.5}>
             <p className="text-ink-secondary text-base max-w-lg mx-auto mb-12 leading-relaxed">
-              Whether you're an investor, feedstock supplier, or industry partner — Ravariya Green Energy offers real opportunity at every stage of the Bio CNG value chain.
+              Industries across Kutch — ceramics, chemicals, textiles, FMCG — and CGD entities can lock in IS 16087:2025-certified CBG at ₹25–40/kg below industrial LPG. Let's build a long-term supply partnership.
             </p>
           </FadeIn>
 

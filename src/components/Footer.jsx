@@ -17,7 +17,7 @@ export default function Footer() {
       {/* Marquee strip */}
       <div className="border-b border-border-dim py-4">
         <Marquee
-          items={['Bio CNG', 'SATAT Aligned', '100 TPD', 'Clean Energy', 'Gujarat', 'India', 'Renewable']}
+          items={['Compressed Biogas', 'IS 16087:2025', '6 TPD CBG', 'Kutch · Gujarat', '25,000+ Cattle', 'Clean Energy', 'Zero Waste']}
           className="text-label text-ink-muted"
           speed={25}
         />
@@ -36,10 +36,10 @@ export default function Footer() {
               />
             </div>
             <p className="text-ink-secondary text-sm leading-relaxed max-w-xs">
-              Converting agricultural waste into clean, renewable Bio CNG — powering India's sustainable transport and energy future.
+              Producing IS 16087:2025-certified Compressed Biogas (CBG) from cattle dung and agri residue — clean fuel for industry and transport across Kutch, Gujarat.
             </p>
             <p className="text-ink-muted text-[11px] tracking-wider uppercase mt-6">
-              A Ravariya Global Ventures Company
+              Ravariya Global Ventures Pvt. Ltd.
             </p>
           </div>
 
@@ -66,22 +66,30 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@ravariyagreenenergy.com"
-                  className="text-sm text-ink-secondary hover:text-accent transition-colors duration-200 block"
+                  href="mailto:info@ravariyaglobalventures.com"
+                  className="text-sm text-ink-secondary hover:text-accent transition-colors duration-200 block break-all"
                 >
-                  info@ravariyagreenenergy.com
+                  info@ravariyaglobalventures.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+919000000000"
+                  href="tel:+918591344745"
                   className="text-sm text-ink-secondary hover:text-accent transition-colors duration-200 block"
                 >
-                  +91 90000 00000
+                  +91 85913 44745
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.ravariyaglobalventures.com"
+                  className="text-sm text-ink-secondary hover:text-accent transition-colors duration-200 block break-all"
+                >
+                  www.ravariyaglobalventures.com
                 </a>
               </li>
               <li className="text-sm text-ink-secondary">
-                Ahmedabad, Gujarat, India
+                Rapar Taluka, Kutch, Gujarat, India
               </li>
             </ul>
           </div>
@@ -91,10 +99,10 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <p className="text-ink-muted text-[11px] tracking-wide">
-            © {year} Ravariya Green Energy Pvt. Ltd.
+            © {year} Ravariya Global Ventures Pvt. Ltd.
           </p>
           <p className="text-ink-muted text-[11px] tracking-wide">
-            Clean Energy · Bio CNG · SATAT Aligned
+            Compressed Biogas · IS 16087:2025 · Kutch, Gujarat
           </p>
         </div>
       </div>

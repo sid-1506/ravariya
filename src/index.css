@@ -13,7 +13,6 @@
 
   html {
     scroll-behavior: auto;
-    cursor: none;
   }
 
   body {
@@ -26,7 +25,7 @@
     line-height: 1.6;
   }
 
-  a, button { cursor: none; }
+  a, button { cursor: pointer; }
 
   ::selection {
     background: #16785A;
@@ -35,11 +34,11 @@
 }
 
 @layer utilities {
-  /* Text sizes */
-  .text-display  { font-size: clamp(5rem, 14vw, 14rem);  line-height: 0.92; letter-spacing: -0.04em; }
-  .text-hero     { font-size: clamp(3rem, 9vw, 9rem);    line-height: 0.95; letter-spacing: -0.03em; }
-  .text-title    { font-size: clamp(2rem, 5vw, 5rem);    line-height: 1.05; letter-spacing: -0.025em; }
-  .text-section  { font-size: clamp(1.5rem, 3.5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em; }
+  /* Text sizes — small padding-bottom keeps descenders (g, p, y) safe under tight leading */
+  .text-display  { font-size: clamp(5rem, 14vw, 14rem);     line-height: 0.95; letter-spacing: -0.04em;  padding-bottom: 0.08em; }
+  .text-hero     { font-size: clamp(3rem, 9vw, 9rem);       line-height: 0.98; letter-spacing: -0.03em;  padding-bottom: 0.08em; }
+  .text-title    { font-size: clamp(2rem, 5vw, 5rem);       line-height: 1.08; letter-spacing: -0.025em; padding-bottom: 0.06em; }
+  .text-section  { font-size: clamp(1.5rem, 3.5vw, 3.5rem); line-height: 1.12; letter-spacing: -0.02em;  padding-bottom: 0.06em; }
   .text-label    { font-size: 0.6875rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
   .text-meta     { font-size: 0.8125rem; letter-spacing: 0.05em; }
 
@@ -62,8 +61,7 @@
   .rule { height: 1px; background: #E5E7EB; }
   .rule-accent { height: 1px; background: #16785A; }
 
-  /* Cursor hidden when custom cursor active */
-  .no-cursor, .no-cursor * { cursor: none !important; }
+
 }
 
 @keyframes marquee {

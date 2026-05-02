@@ -5,11 +5,11 @@ export default function SmoothScroll({ children }) {
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
-        duration: 1.4,
+        lerp: 0.15,
+        duration: 0.6,
         smoothWheel: true,
-        wheelMultiplier: 1,
-        touchMultiplier: 1.5,
+        wheelMultiplier: 1.3,
+        touchMultiplier: 1.3,
       }}
     >
       {children}
