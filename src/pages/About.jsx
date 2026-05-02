@@ -28,7 +28,7 @@ export default function About() {
       />
 
       {/* ── STORY ── */}
-      <section className="py-24 md:py-36 px-6 md:px-10 bg-bg">
+      <section className="py-24 md:py-36 px-6 md:px-10 bg-white">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-start">
 
@@ -50,7 +50,7 @@ export default function About() {
                   'Today, we work alongside farmers, fuel distributors, government bodies, and investors to make Bio CNG a mainstream energy source across Gujarat and beyond.',
                 ].map((p, i) => (
                   <FadeIn key={i} delay={0.15 + i * 0.1}>
-                    <p className="text-ink-muted text-base leading-relaxed">{p}</p>
+                    <p className="text-ink-secondary text-base leading-relaxed">{p}</p>
                   </FadeIn>
                 ))}
               </div>
@@ -58,17 +58,17 @@ export default function About() {
 
             {/* Right: visual */}
             <FadeIn delay={0.2} direction="left">
-              <div className="relative aspect-square overflow-hidden bg-surface border border-white/[0.07]">
+              <div className="relative aspect-square overflow-hidden bg-bg-soft border border-border-dim rounded-none">
                 <div
                   className="absolute inset-0"
-                  style={{ background: 'linear-gradient(160deg, #0d3d22 0%, #1B7A45 60%, #3DFF7A15 100%)' }}
+                  style={{ background: 'linear-gradient(160deg, #E6F5F0 0%, #16785A 60%, #0E5A42 100%)' }}
                 />
                 {/* Concentric rings */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   {[0,1,2,3,4,5].map((i) => (
                     <div
                       key={i}
-                      className="absolute rounded-full border border-white/[0.07]"
+                      className="absolute rounded-full border border-white/15"
                       style={{
                         width: `${60 + i * 80}px`,
                         height: `${60 + i * 80}px`,
@@ -77,19 +77,19 @@ export default function About() {
                   ))}
                   <div className="relative z-10 text-center">
                     <div
-                      className="font-black text-white/10 leading-none"
+                      className="font-black text-white/20 leading-none"
                       style={{ fontSize: '5rem', letterSpacing: '-0.05em' }}
                     >
                       RGE
                     </div>
-                    <div className="text-ink text-sm font-semibold mt-2 tracking-widest uppercase">Est. 2024</div>
-                    <div className="text-ink-muted text-xs mt-1">Gujarat, India</div>
+                    <div className="text-white text-sm font-semibold mt-2 tracking-widest uppercase">Est. 2024</div>
+                    <div className="text-white/70 text-xs mt-1">Gujarat, India</div>
                   </div>
                 </div>
                 {/* Corner label */}
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  <span className="text-[10px] tracking-widest uppercase text-white/40">Active</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  <span className="text-[10px] tracking-widest uppercase text-white/60">Active</span>
                 </div>
               </div>
             </FadeIn>
@@ -98,7 +98,7 @@ export default function About() {
       </section>
 
       {/* ── VISION / MISSION ── */}
-      <section className="py-24 md:py-32 px-6 md:px-10 bg-surface border-y border-white/[0.06]">
+      <section className="py-24 md:py-32 px-6 md:px-10 bg-bg-soft border-y border-border-dim">
         <div className="max-w-[1600px] mx-auto">
           <FadeIn className="mb-14">
             <span className="text-label text-ink-muted">— Vision & Mission</span>
@@ -121,8 +121,8 @@ export default function About() {
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className={`p-10 md:p-12 border relative overflow-hidden ${
-                  item.accent ? 'border-accent/30 bg-accent/[0.03]' : 'border-white/[0.07] bg-bg'
+                className={`p-10 md:p-12 border relative overflow-hidden rounded-none shadow-card hover:shadow-card-hover transition-all duration-300 ${
+                  item.accent ? 'border-accent/25 bg-accent-light' : 'border-border-dim bg-white'
                 }`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -133,8 +133,8 @@ export default function About() {
                 <h3 className="text-2xl md:text-3xl font-black text-ink mb-5 tracking-tight leading-tight">
                   {item.heading}
                 </h3>
-                <p className="text-ink-muted text-sm leading-relaxed">{item.body}</p>
-                <div className={`absolute bottom-0 left-0 right-0 h-px ${item.accent ? 'bg-accent/40' : 'bg-white/[0.07]'}`} />
+                <p className="text-ink-secondary text-sm leading-relaxed">{item.body}</p>
+                <div className={`absolute bottom-0 left-0 right-0 h-[2px] ${item.accent ? 'bg-accent/40' : 'bg-border-dim'}`} />
               </motion.div>
             ))}
           </div>
@@ -142,7 +142,7 @@ export default function About() {
       </section>
 
       {/* ── MARQUEE ── */}
-      <div className="border-b border-white/[0.06] bg-bg py-4 overflow-hidden">
+      <div className="border-b border-border-dim bg-white py-4 overflow-hidden">
         <Marquee
           items={['Mission-Driven', 'Clean Energy Pioneer', 'Gujarat', 'SATAT Registered', 'Zero Waste', 'Farmer Empowerment']}
           className="text-label text-ink-muted"
@@ -152,7 +152,7 @@ export default function About() {
       </div>
 
       {/* ── FOUNDER ── */}
-      <section ref={founderRef} className="py-24 md:py-36 px-6 md:px-10 bg-bg overflow-hidden">
+      <section ref={founderRef} className="py-24 md:py-36 px-6 md:px-10 bg-white overflow-hidden">
         <div className="max-w-[1600px] mx-auto">
           <FadeIn className="mb-14">
             <span className="text-label text-ink-muted">— Leadership</span>
@@ -161,7 +161,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
 
             {/* Image */}
-            <div className="relative overflow-hidden aspect-[3/4] bg-surface border border-white/[0.07]">
+            <div className="relative overflow-hidden aspect-[3/4] bg-bg-soft border border-border-dim rounded-none">
               <motion.div className="absolute inset-0" style={{ y: founderImgY }}>
                 <img
                   src="/assets/bhargav.PNG"
@@ -174,18 +174,18 @@ export default function About() {
                 />
                 <div
                   className="w-full h-full hidden items-center justify-center"
-                  style={{ background: 'linear-gradient(160deg, #0d3d22 0%, #1B7A45 100%)' }}
+                  style={{ background: 'linear-gradient(160deg, #E6F5F0 0%, #16785A 100%)' }}
                 >
                   <div className="text-center">
-                    <div className="text-8xl mb-3 opacity-30">BR</div>
-                    <div className="text-ink text-sm font-semibold">Bhargav Ravariya</div>
+                    <div className="text-8xl mb-3 opacity-30 text-white">BR</div>
+                    <div className="text-white text-sm font-semibold">Bhargav Ravariya</div>
                   </div>
                 </div>
               </motion.div>
               {/* Name overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
-                <div className="text-label text-ink-muted mb-1">Founder & MD</div>
-                <div className="text-ink font-bold text-lg">Bhargav Ravariya</div>
+              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="text-label text-white/70 mb-1">Founder & MD</div>
+                <div className="text-white font-bold text-lg">Bhargav Ravariya</div>
               </div>
             </div>
 
@@ -203,7 +203,7 @@ export default function About() {
                   'Under his leadership, Ravariya Green Energy has established its first Bio CNG plant in Gujarat, building partnerships with farmers, OMCs, and government bodies. Bhargav envisions scaling the company\'s footprint nationally.',
                 ].map((p, i) => (
                   <FadeIn key={i} delay={0.2 + i * 0.1}>
-                    <p className="text-ink-muted text-base leading-relaxed">{p}</p>
+                    <p className="text-ink-secondary text-base leading-relaxed">{p}</p>
                   </FadeIn>
                 ))}
               </div>
@@ -212,7 +212,7 @@ export default function About() {
                   {['Bio CNG Pioneer', 'Gujarat Entrepreneur', 'SATAT Advocate', 'Clean Energy'].map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] tracking-widest uppercase text-ink-muted border border-white/[0.1] px-4 py-2"
+                      className="text-[11px] tracking-widest uppercase text-ink-secondary border border-border-dim px-4 py-2 rounded-none"
                     >
                       {tag}
                     </span>
@@ -225,7 +225,7 @@ export default function About() {
       </section>
 
       {/* ── RGVPL BANNER ── */}
-      <section className="py-20 px-6 md:px-10 bg-surface border-t border-white/[0.06]">
+      <section className="py-20 px-6 md:px-10 bg-bg-soft border-t border-border-dim">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 items-center">
             <FadeIn>
@@ -235,7 +235,7 @@ export default function About() {
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-ink-muted text-base leading-relaxed">
+              <p className="text-ink-secondary text-base leading-relaxed">
                 Ravariya Green Energy is the flagship subsidiary of Ravariya Global Ventures Pvt. Ltd. (RGVPL) — a diversified holding company with upcoming ventures across clean energy infrastructure, agri-tech, and industrial logistics. As RGVPL expands its portfolio, RGE leads its commitment to India's green energy transition.
               </p>
             </FadeIn>

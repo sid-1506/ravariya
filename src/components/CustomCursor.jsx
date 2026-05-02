@@ -28,13 +28,13 @@ export default function CustomCursor() {
       isHovering.current = true
       if (dotRef.current)  dotRef.current.style.transform  += ' scale(0)'
       if (ringRef.current) ringRef.current.style.setProperty('--ring-scale', '1.8')
-      if (ringRef.current) ringRef.current.style.borderColor = '#3DFF7A'
+      if (ringRef.current) ringRef.current.style.borderColor = '#16785A'
     }
     const onLeave = () => {
       isHovering.current = false
       if (dotRef.current)  dotRef.current.style.transform  = ''
       if (ringRef.current) ringRef.current.style.setProperty('--ring-scale', '1')
-      if (ringRef.current) ringRef.current.style.borderColor = 'rgba(255,255,255,0.4)'
+      if (ringRef.current) ringRef.current.style.borderColor = 'rgba(17,24,39,0.3)'
     }
 
     window.addEventListener('mousemove', onMove)
@@ -56,12 +56,12 @@ export default function CustomCursor() {
     <>
       <motion.div
         ref={dotRef}
-        className="fixed w-2 h-2 rounded-full bg-white pointer-events-none mix-blend-difference"
+        className="fixed w-2 h-2 rounded-full bg-ink pointer-events-none mix-blend-difference"
         style={{ x: dotX, y: dotY, zIndex: 10001 }}
       />
       <motion.div
         ref={ringRef}
-        className="fixed w-9 h-9 rounded-full border border-white/40 pointer-events-none transition-[border-color] duration-200"
+        className="fixed w-9 h-9 rounded-full border border-ink/30 pointer-events-none transition-[border-color] duration-200"
         style={{ x: ringX, y: ringY, zIndex: 10000 }}
       />
     </>

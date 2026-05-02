@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <SmoothScroll>
-      <div className="no-cursor grain bg-bg min-h-screen flex flex-col">
+      <div className="no-cursor bg-bg min-h-screen flex flex-col">
         <CustomCursor />
         <ScrollProgress />
         <Navbar />

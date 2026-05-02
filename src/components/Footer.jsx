@@ -13,9 +13,9 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-bg border-t border-white/[0.06]">
+    <footer className="bg-bg-soft border-t border-border-dim">
       {/* Marquee strip */}
-      <div className="border-b border-white/[0.06] py-4">
+      <div className="border-b border-border-dim py-4">
         <Marquee
           items={['Bio CNG', 'SATAT Aligned', '100 TPD', 'Clean Energy', 'Gujarat', 'India', 'Renewable']}
           className="text-label text-ink-muted"
@@ -29,12 +29,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-bg text-xs font-black">R</span>
-              </div>
-              <span className="font-semibold text-ink text-sm">Ravariya Green Energy</span>
+              <img
+                src="/assets/IMG_4634.PNG"
+                alt="Ravariya Green Energy"
+                className="h-14 md:h-12 w-auto object-contain"
+              />
             </div>
-            <p className="text-ink-muted text-sm leading-relaxed max-w-xs">
+            <p className="text-ink-secondary text-sm leading-relaxed max-w-xs">
               Converting agricultural waste into clean, renewable Bio CNG — powering India's sustainable transport and energy future.
             </p>
             <p className="text-ink-muted text-[11px] tracking-wider uppercase mt-6">
@@ -50,7 +51,7 @@ export default function Footer() {
                 <li key={l.path}>
                   <Link
                     to={l.path}
-                    className="text-sm text-ink/60 hover:text-ink transition-colors duration-200"
+                    className="text-sm text-ink-secondary hover:text-accent transition-colors duration-200"
                   >
                     {l.label}
                   </Link>
@@ -66,7 +67,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@ravariyagreenenergy.com"
-                  className="text-sm text-ink/60 hover:text-ink transition-colors duration-200 block"
+                  className="text-sm text-ink-secondary hover:text-accent transition-colors duration-200 block"
                 >
                   info@ravariyagreenenergy.com
                 </a>
@@ -74,12 +75,12 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+919000000000"
-                  className="text-sm text-ink/60 hover:text-ink transition-colors duration-200 block"
+                  className="text-sm text-ink-secondary hover:text-accent transition-colors duration-200 block"
                 >
                   +91 90000 00000
                 </a>
               </li>
-              <li className="text-sm text-ink/60">
+              <li className="text-sm text-ink-secondary">
                 Ahmedabad, Gujarat, India
               </li>
             </ul>

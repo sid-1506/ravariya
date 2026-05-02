@@ -33,11 +33,12 @@ export default function Navbar() {
       <motion.nav
         className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10"
         animate={{
-          paddingTop: scrolled ? '16px' : '28px',
-          paddingBottom: scrolled ? '16px' : '28px',
-          backgroundColor: scrolled ? 'rgba(6,6,6,0.92)' : 'transparent',
+          paddingTop: scrolled ? '14px' : '24px',
+          paddingBottom: scrolled ? '14px' : '24px',
+          backgroundColor: scrolled ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0)',
           backdropFilter: scrolled ? 'blur(20px)' : 'blur(0px)',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid #E5E7EB' : '1px solid transparent',
+          boxShadow: scrolled ? '0 1px 3px rgba(0,0,0,0.04)' : '0 0 0 rgba(0,0,0,0)',
         }}
         transition={{ duration: 0.4, ease: EASE }}
       >
@@ -45,13 +46,11 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-              <span className="text-bg text-xs font-black">R</span>
-            </div>
-            <div className="leading-none">
-              <div className="text-ink font-semibold text-sm tracking-tight">Ravariya Green Energy</div>
-              <div className="text-ink-muted text-[10px] tracking-[0.15em] uppercase mt-0.5">Bio CNG · Gujarat</div>
-            </div>
+            <img
+              src="/assets/IMG_4634.PNG"
+              alt="Ravariya Green Energy"
+              className="h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* DESKTOP LINKS */}
@@ -63,13 +62,13 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   className="relative text-[13px] tracking-[0.08em] uppercase font-medium transition-colors duration-200"
-                  style={{ color: active ? '#F0EDE8' : 'rgba(240,237,232,0.45)' }}
+                  style={{ color: active ? '#111827' : '#9CA3AF' }}
                 >
                   {link.label}
                   {active && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute -bottom-1 left-0 right-0 h-px bg-accent"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent rounded-full"
                     />
                   )}
                 </Link>
@@ -81,7 +80,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               to="/contact"
-              className="text-[13px] tracking-[0.08em] uppercase font-semibold px-5 py-2.5 border border-ink/20 hover:border-accent hover:text-accent transition-all duration-300"
+              className="text-[13px] tracking-[0.06em] uppercase font-semibold px-5 py-2.5 bg-accent text-white rounded-none hover:bg-accent-dark transition-all duration-300"
             >
               Contact
             </Link>
@@ -116,7 +115,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 flex flex-col bg-bg"
+            className="fixed inset-0 z-40 flex flex-col bg-white"
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
@@ -133,7 +132,7 @@ export default function Navbar() {
                 >
                   <Link
                     to={link.path}
-                    className="text-hero font-black text-ink hover:text-accent transition-colors duration-200 leading-none"
+                    className="font-black text-ink hover:text-accent transition-colors duration-200 leading-none"
                     style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}
                   >
                     {link.label}

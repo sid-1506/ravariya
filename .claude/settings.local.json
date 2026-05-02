@@ -9,7 +9,11 @@
       "Bash(node -e \"const pkg = require\\('/Users/krishnakantrout/Downloads/ravariya/node_modules/lenis/package.json'\\); console.log\\('exports:', JSON.stringify\\(Object.keys\\(pkg.exports || {}\\)\\)\\)\")",
       "Bash(curl -s \"http://localhost:5175/src/App.jsx\")",
       "Bash(curl -s \"http://localhost:5175/\")",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(npx --yes playwright screenshot --browser chromium http://localhost:5175 /tmp/home.png --viewport-size=1440,900)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s http://localhost:5175)"
     ]
   }
 }

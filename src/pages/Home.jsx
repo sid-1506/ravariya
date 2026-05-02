@@ -7,9 +7,9 @@ import {
   useInView,
   AnimatePresence,
 } from 'framer-motion'
-import TextReveal    from '../components/TextReveal'
-import FadeIn        from '../components/FadeIn'
-import Marquee       from '../components/Marquee'
+import TextReveal from '../components/TextReveal'
+import FadeIn from '../components/FadeIn'
+import Marquee from '../components/Marquee'
 import MagneticButton from '../components/MagneticButton'
 
 const EASE = [0.25, 0.4, 0.25, 1]
@@ -47,24 +47,23 @@ function StepCard({ num, title, desc, index }) {
   return (
     <motion.div
       ref={ref}
-      className="relative border border-white/[0.07] bg-surface p-8 md:p-10"
+      className="relative border border-border-dim bg-white p-8 md:p-10 rounded-none shadow-card hover:shadow-card-hover transition-shadow duration-300"
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
-      whileHover={{ borderColor: 'rgba(61,255,122,0.3)', backgroundColor: '#141414' }}
     >
       <div className="flex items-start justify-between mb-8">
         <span className="text-[11px] tracking-[0.2em] uppercase text-ink-muted font-medium">Step {num}</span>
         <span
-          className="font-black text-white/[0.06] leading-none select-none"
+          className="font-black text-ink/[0.05] leading-none select-none"
           style={{ fontSize: 'clamp(3rem, 6vw, 6rem)' }}
         >
           {num}
         </span>
       </div>
       <h3 className="text-xl md:text-2xl font-bold text-ink mb-3 tracking-tight">{title}</h3>
-      <p className="text-ink-muted text-sm leading-relaxed">{desc}</p>
-      <div className="mt-6 h-px w-12 bg-accent" />
+      <p className="text-ink-secondary text-sm leading-relaxed">{desc}</p>
+      <div className="mt-6 h-[2px] w-12 bg-accent rounded-full" />
     </motion.div>
   )
 }
@@ -77,7 +76,7 @@ export default function Home() {
     offset: ['start start', 'end start'],
   })
 
-  const bgY      = useTransform(heroScroll, [0, 1], ['0%', '35%'])
+  const bgY = useTransform(heroScroll, [0, 1], ['0%', '35%'])
   const heroTextY = useTransform(heroScroll, [0, 1], ['0%', '18%'])
   const heroOpacity = useTransform(heroScroll, [0, 0.7], [1, 0])
 
@@ -112,18 +111,27 @@ export default function Home() {
           <div
             className="absolute inset-0"
             style={{
-              background: 'radial-gradient(ellipse 80% 60% at 70% 30%, rgba(27,122,69,0.18) 0%, transparent 70%), #060606',
+              background: 'radial-gradient(ellipse 80% 60% at 70% 30%, rgba(22,120,90,0.06) 0%, transparent 70%), #FFFFFF',
             }}
           />
-          {/* Grid */}
+          {/* Subtle grid */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-px h-full bg-white/[0.03]" />
-            <div className="absolute top-0 left-1/2 w-px h-full bg-white/[0.03]" />
-            <div className="absolute top-0 right-1/4 w-px h-full bg-white/[0.03]" />
-            <div className="absolute top-1/3 left-0 right-0 h-px bg-white/[0.03]" />
-            <div className="absolute top-2/3 left-0 right-0 h-px bg-white/[0.03]" />
+            <div className="absolute top-0 left-1/4 w-px h-full bg-border-dim/50" />
+            <div className="absolute top-0 left-1/2 w-px h-full bg-border-dim/50" />
+            <div className="absolute top-1/3 left-0 right-0 h-px bg-border-dim/50" />
+            <div className="absolute top-2/3 left-0 right-0 h-px bg-border-dim/50" />
           </div>
         </motion.div>
+
+        {/* Watermark logo — mobile: top-center empty space, desktop: right side */}
+        <div className="absolute pointer-events-none select-none z-[1] top-[12%] left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-auto md:translate-x-0 md:right-[6%]">
+          <img
+            src="/assets/IMG_4634.PNG"
+            alt="Ravariya Green Energy"
+            aria-hidden="true"
+            className="w-[70vw] md:w-[28vw] max-w-[420px] object-contain opacity-[0.40]"
+          />
+        </div>
 
         {/* Ghost display text */}
         <motion.div
@@ -131,10 +139,10 @@ export default function Home() {
           style={{ y: bgY }}
         >
           <span
-            className="font-black text-white/[0.04] leading-none"
+            className="font-black text-ink/[0.03] leading-none"
             style={{ fontSize: 'clamp(8rem, 22vw, 22rem)', letterSpacing: '-0.05em' }}
           >
-            RGE
+
           </span>
         </motion.div>
 
@@ -145,7 +153,7 @@ export default function Home() {
         >
           {/* Label row */}
           <motion.div
-            className="flex items-center gap-3 mb-8"
+            className="flex items-center gap-3 mb-8 lg:hidden"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
@@ -178,8 +186,8 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.45, ease: EASE }}
             >
               <h1
-                className="font-black leading-[0.92] tracking-tighter"
-                style={{ fontSize: 'clamp(3.5rem, 11vw, 11rem)', color: '#3DFF7A' }}
+                className="font-black leading-[0.92] tracking-tighter text-accent"
+                style={{ fontSize: 'clamp(3.5rem, 11vw, 11rem)' }}
               >
                 GREEN
               </h1>
@@ -207,20 +215,20 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: EASE }}
           >
-            <p className="text-ink-muted text-base max-w-md leading-relaxed">
+            <p className="text-ink-secondary text-base max-w-md leading-relaxed">
               Converting agricultural waste into fuel-grade Bio CNG — clean, renewable, and powering India's transport future under the SATAT initiative.
             </p>
             <div className="flex items-center gap-4">
               <Link
                 to="/plant"
-                className="group inline-flex items-center gap-3 text-sm font-semibold text-ink border border-ink/20 px-6 py-3 hover:border-accent hover:text-accent transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-sm font-semibold text-ink border border-border-dim px-6 py-3 rounded-none hover:border-accent hover:text-accent transition-all duration-300"
               >
                 Explore Plant
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 text-sm font-semibold text-bg bg-accent px-6 py-3 hover:bg-white transition-colors duration-300"
+                className="inline-flex items-center gap-3 text-sm font-semibold text-white bg-accent px-6 py-3 rounded-none hover:bg-accent-dark transition-colors duration-300"
               >
                 Partner With Us
               </Link>
@@ -228,27 +236,13 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 right-8 md:right-12 flex flex-col items-center gap-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
-          style={{ opacity: heroOpacity }}
-        >
-          <span className="text-label text-ink-muted [writing-mode:vertical-lr]">Scroll</span>
-          <motion.div
-            className="w-px h-16 bg-gradient-to-b from-transparent to-ink/30 origin-top"
-            animate={{ scaleY: [0.2, 1, 0.2] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        </motion.div>
+
       </section>
 
       {/* ════════════════════════════════════════
           MARQUEE
       ════════════════════════════════════════ */}
-      <div className="border-y border-white/[0.06] bg-surface py-4 overflow-hidden">
+      <div className="border-y border-border-dim bg-bg-soft py-4 overflow-hidden">
         <Marquee
           items={['Bio CNG', 'SATAT Aligned', '100 TPD', 'Anaerobic Digestion', 'Clean Energy', 'Gujarat', 'Renewable', 'Zero Waste']}
           className="text-sm font-medium text-accent tracking-widest"
@@ -259,7 +253,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           WHAT WE DO
       ════════════════════════════════════════ */}
-      <section className="py-24 md:py-36 px-6 md:px-10 bg-bg">
+      <section className="py-24 md:py-36 px-6 md:px-10 bg-white">
         <div className="max-w-[1600px] mx-auto">
 
           {/* Header */}
@@ -276,7 +270,7 @@ export default function Home() {
               />
             </div>
             <FadeIn delay={0.2}>
-              <p className="text-ink-muted text-base leading-relaxed md:text-right">
+              <p className="text-ink-secondary text-base leading-relaxed md:text-right">
                 Ravariya Green Energy operates India's next-generation Bio CNG plants — harnessing the power of anaerobic digestion to convert agricultural residue into fuel-grade compressed natural gas.
               </p>
             </FadeIn>
@@ -306,24 +300,19 @@ export default function Home() {
             ].map((card, i) => (
               <motion.div
                 key={i}
-                className={`p-8 md:p-10 border relative overflow-hidden transition-all duration-500 ${
-                  card.accent
-                    ? 'border-accent/40 bg-accent/[0.04]'
-                    : 'border-white/[0.07] bg-surface'
-                }`}
+                className={`p-8 md:p-10 border relative overflow-hidden rounded-none transition-all duration-300 shadow-card hover:shadow-card-hover ${card.accent
+                    ? 'border-accent/30 bg-accent-light'
+                    : 'border-border-dim bg-white'
+                  }`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-8% 0px' }}
                 transition={{ duration: 0.7, delay: i * 0.1, ease: EASE }}
-                whileHover={{
-                  borderColor: 'rgba(61,255,122,0.4)',
-                  backgroundColor: card.accent ? 'rgba(61,255,122,0.06)' : '#141414',
-                }}
               >
                 <span className="text-[11px] tracking-[0.2em] uppercase text-ink-muted font-medium block mb-8">{card.num}</span>
                 <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4 tracking-tight">{card.title}</h3>
-                <p className="text-ink-muted text-sm leading-relaxed mb-6">{card.text}</p>
-                <div className={`h-px w-10 ${card.accent ? 'bg-accent' : 'bg-white/20'}`} />
+                <p className="text-ink-secondary text-sm leading-relaxed mb-6">{card.text}</p>
+                <div className={`h-[2px] w-10 rounded-full ${card.accent ? 'bg-accent' : 'bg-border-dim'}`} />
               </motion.div>
             ))}
           </div>
@@ -333,19 +322,19 @@ export default function Home() {
       {/* ════════════════════════════════════════
           STATS
       ════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 px-6 md:px-10 bg-surface border-y border-white/[0.06]">
+      <section className="py-24 md:py-32 px-6 md:px-10 bg-bg-soft border-y border-border-dim">
         <div className="max-w-[1600px] mx-auto">
 
           <FadeIn className="mb-16">
             <span className="text-label text-ink-muted">— Numbers That Matter</span>
           </FadeIn>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/[0.06]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-border-dim">
             {[
-              { val: 100, suffix: ' TPD',  label: 'Plant Capacity',      meta: 'Tonnes per day' },
-              { val: 100, suffix: '%',     label: 'Renewable',           meta: 'Zero fossil inputs' },
-              { val: 5,   suffix: ' Steps', label: 'Production Process', meta: 'Waste to fuel' },
-              { val: 2024,   suffix: '',    label: 'Established',         meta: 'Ahmedabad, Gujarat' },
+              { val: 100, suffix: ' TPD', label: 'Plant Capacity', meta: 'Tonnes per day' },
+              { val: 100, suffix: '%', label: 'Renewable', meta: 'Zero fossil inputs' },
+              { val: 5, suffix: ' Steps', label: 'Production Process', meta: 'Waste to fuel' },
+              { val: 2024, suffix: '', label: 'Established', meta: 'Ahmedabad, Gujarat' },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -372,7 +361,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           PROCESS
       ════════════════════════════════════════ */}
-      <section className="py-24 md:py-36 px-6 md:px-10 bg-bg">
+      <section className="py-24 md:py-36 px-6 md:px-10 bg-white">
         <div className="max-w-[1600px] mx-auto">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-20">
@@ -390,7 +379,7 @@ export default function Home() {
             <FadeIn delay={0.2}>
               <Link
                 to="/plant"
-                className="group inline-flex items-center gap-3 text-sm font-semibold text-ink-muted hover:text-accent transition-colors duration-300"
+                className="group inline-flex items-center gap-3 text-sm font-semibold text-ink-secondary hover:text-accent transition-colors duration-300"
               >
                 Full technical detail
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -400,11 +389,11 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { num: '01', title: 'Feedstock Collection',  desc: 'Agricultural residue — crop stubble, sugarcane bagasse, cattle dung — collected from farms and aggregation centres.' },
-              { num: '02', title: 'Anaerobic Digestion',   desc: 'Biomass undergoes controlled digestion in sealed bio-digesters, producing raw biogas (~60% methane).' },
-              { num: '03', title: 'Gas Purification',      desc: 'Advanced PSA systems remove CO₂, H₂S, and impurities, yielding >95% pure biomethane.' },
-              { num: '04', title: 'Compression',           desc: 'Purified biomethane is compressed to 200–250 bar — identical to fossil CNG in quality and specification.' },
-              { num: '05', title: 'Distribution',          desc: 'Bio CNG is dispensed on-site or cascaded into cylinders for supply to Oil Marketing Companies under SATAT.' },
+              { num: '01', title: 'Feedstock Collection', desc: 'Agricultural residue — crop stubble, sugarcane bagasse, cattle dung — collected from farms and aggregation centres.' },
+              { num: '02', title: 'Anaerobic Digestion', desc: 'Biomass undergoes controlled digestion in sealed bio-digesters, producing raw biogas (~60% methane).' },
+              { num: '03', title: 'Gas Purification', desc: 'Advanced PSA systems remove CO₂, H₂S, and impurities, yielding >95% pure biomethane.' },
+              { num: '04', title: 'Compression', desc: 'Purified biomethane is compressed to 200–250 bar — identical to fossil CNG in quality and specification.' },
+              { num: '05', title: 'Distribution', desc: 'Bio CNG is dispensed on-site or cascaded into cylinders for supply to Oil Marketing Companies under SATAT.' },
             ].map((step, i) => (
               <StepCard key={i} index={i} {...step} />
             ))}
@@ -415,7 +404,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           STATEMENT / ABOUT TEASER
       ════════════════════════════════════════ */}
-      <section className="py-24 md:py-40 px-6 md:px-10 bg-surface border-y border-white/[0.06] overflow-hidden">
+      <section className="py-24 md:py-40 px-6 md:px-10 bg-bg-soft border-y border-border-dim overflow-hidden">
         <div className="max-w-[1600px] mx-auto">
           <FadeIn className="mb-10">
             <span className="text-label text-ink-muted">— Our Mission</span>
@@ -433,13 +422,13 @@ export default function Home() {
           <FadeIn delay={0.5} className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <Link
               to="/about"
-              className="group inline-flex items-center gap-3 text-sm font-semibold text-ink border-b border-ink/30 pb-1 hover:border-accent hover:text-accent transition-all duration-300"
+              className="group inline-flex items-center gap-3 text-sm font-semibold text-ink border-b border-border-dim pb-1 hover:border-accent hover:text-accent transition-all duration-300"
             >
               Our Story
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
-            <div className="h-px w-10 bg-white/10 hidden sm:block" />
-            <p className="text-ink-muted text-sm max-w-sm">
+            <div className="h-px w-10 bg-border-dim hidden sm:block" />
+            <p className="text-ink-secondary text-sm max-w-sm">
               Founded in Ahmedabad, Gujarat — building India's Bio CNG infrastructure from the ground up.
             </p>
           </FadeIn>
@@ -449,12 +438,12 @@ export default function Home() {
       {/* ════════════════════════════════════════
           FEATURE SPLIT
       ════════════════════════════════════════ */}
-      <section ref={featRef} className="py-24 md:py-36 px-6 md:px-10 bg-bg overflow-hidden">
+      <section ref={featRef} className="py-24 md:py-36 px-6 md:px-10 bg-white overflow-hidden">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             {/* Image side */}
-            <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[600px] overflow-hidden bg-surface-2 border border-white/[0.07]">
+            <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[600px] overflow-hidden bg-bg-soft border border-border-dim rounded-none">
               <motion.div
                 className="absolute inset-0"
                 style={{ y: featImgY }}
@@ -463,15 +452,15 @@ export default function Home() {
                 <div
                   className="w-full h-full"
                   style={{
-                    background: 'linear-gradient(160deg, #0d3d22 0%, #1B7A45 50%, #3DFF7A20 100%)',
+                    background: 'linear-gradient(160deg, #E6F5F0 0%, #16785A 50%, #0E5A42 100%)',
                   }}
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
                   {/* Concentric ring art */}
-                  {[0,1,2,3,4].map((i) => (
+                  {[0, 1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
-                      className="absolute rounded-full border border-white/[0.08]"
+                      className="absolute rounded-full border border-white/20"
                       style={{
                         width: `${80 + i * 90}px`,
                         height: `${80 + i * 90}px`,
@@ -481,16 +470,16 @@ export default function Home() {
                     />
                   ))}
                   <div
-                    className="w-16 h-16 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center relative z-10"
+                    className="w-16 h-16 rounded-full bg-white/20 border border-white/40 flex items-center justify-center relative z-10"
                   >
-                    <div className="w-4 h-4 rounded-full bg-accent" />
+                    <div className="w-4 h-4 rounded-full bg-white" />
                   </div>
                 </div>
               </motion.div>
               {/* Overlay tag */}
-              <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-bg/80 backdrop-blur px-3 py-2">
+              <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-white/90 backdrop-blur px-3 py-2 rounded-none">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                <span className="text-[11px] tracking-[0.15em] uppercase text-ink-muted font-medium">Plant · Gujarat</span>
+                <span className="text-[11px] tracking-[0.15em] uppercase text-ink-secondary font-medium">Plant · Gujarat</span>
               </div>
             </div>
 
@@ -514,11 +503,11 @@ export default function Home() {
                   { title: 'Circular economy model', desc: 'Every tonne processed generates both clean fuel and fertilizer — zero waste by design.' },
                 ].map((item, i) => (
                   <FadeIn key={i} delay={0.2 + i * 0.1}>
-                    <div className="flex gap-5 items-start py-5 border-b border-white/[0.06]">
+                    <div className="flex gap-5 items-start py-5 border-b border-border-dim">
                       <span className="text-accent font-black text-lg mt-0.5 flex-shrink-0">↗</span>
                       <div>
                         <div className="font-semibold text-ink text-base mb-1">{item.title}</div>
-                        <div className="text-ink-muted text-sm leading-relaxed">{item.desc}</div>
+                        <div className="text-ink-secondary text-sm leading-relaxed">{item.desc}</div>
                       </div>
                     </div>
                   </FadeIn>
@@ -528,7 +517,7 @@ export default function Home() {
               <FadeIn delay={0.6} className="mt-10">
                 <Link
                   to="/plant"
-                  className="group inline-flex items-center gap-3 text-sm font-semibold text-ink border border-ink/20 px-6 py-3 hover:border-accent hover:text-accent transition-all duration-300"
+                  className="group inline-flex items-center gap-3 text-sm font-semibold text-ink border border-border-dim px-6 py-3 rounded-none hover:border-accent hover:text-accent transition-all duration-300"
                 >
                   Technical Specifications
                   <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -542,11 +531,11 @@ export default function Home() {
       {/* ════════════════════════════════════════
           CTA
       ════════════════════════════════════════ */}
-      <section className="relative py-24 md:py-40 px-6 md:px-10 overflow-hidden bg-surface border-t border-white/[0.06]">
+      <section className="relative py-24 md:py-40 px-6 md:px-10 overflow-hidden bg-bg-soft border-t border-border-dim">
         {/* Accent glow */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(61,255,122,0.06) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(22,120,90,0.04) 0%, transparent 70%)' }}
         />
 
         <div className="relative z-10 max-w-[1600px] mx-auto text-center">
@@ -564,7 +553,7 @@ export default function Home() {
           />
 
           <FadeIn delay={0.5}>
-            <p className="text-ink-muted text-base max-w-lg mx-auto mb-12 leading-relaxed">
+            <p className="text-ink-secondary text-base max-w-lg mx-auto mb-12 leading-relaxed">
               Whether you're an investor, feedstock supplier, or industry partner — Ravariya Green Energy offers real opportunity at every stage of the Bio CNG value chain.
             </p>
           </FadeIn>
@@ -572,14 +561,14 @@ export default function Home() {
           <FadeIn delay={0.65}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <MagneticButton
-                className="inline-flex items-center gap-3 font-semibold text-sm text-bg bg-accent px-8 py-4 hover:bg-white transition-colors duration-300"
+                className="inline-flex items-center gap-3 font-semibold text-sm text-white bg-accent px-8 py-4 rounded-none hover:bg-accent-dark transition-colors duration-300"
                 onClick={() => window.location.href = '/contact'}
               >
                 Get In Touch →
               </MagneticButton>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-3 font-semibold text-sm text-ink border border-ink/20 px-8 py-4 hover:border-accent hover:text-accent transition-all duration-300"
+                className="inline-flex items-center gap-3 font-semibold text-sm text-ink border border-border-dim px-8 py-4 rounded-none hover:border-accent hover:text-accent transition-all duration-300"
               >
                 Learn About Us
               </Link>

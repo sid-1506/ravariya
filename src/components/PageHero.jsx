@@ -15,15 +15,15 @@ export default function PageHero({ badge, title, subtitle, accentWord }) {
       ref={ref}
       className="relative min-h-[72vh] flex flex-col justify-end pt-32 pb-16 md:pb-24 px-6 md:px-10 overflow-hidden bg-bg"
     >
-      {/* Grid lines */}
+      {/* Subtle grid lines */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-white/[0.04]" />
-        <div className="absolute top-0 right-1/4 w-px h-full bg-white/[0.04]" />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-border-dim/40" />
+        <div className="absolute top-0 right-1/4 w-px h-full bg-border-dim/40" />
       </div>
 
       {/* Ghost letters */}
       <div
-        className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 font-black text-white/[0.03] pointer-events-none select-none leading-none"
+        className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 font-black text-ink/[0.03] pointer-events-none select-none leading-none"
         style={{ fontSize: 'clamp(10rem, 25vw, 25rem)' }}
         aria-hidden
       >
@@ -55,7 +55,7 @@ export default function PageHero({ badge, title, subtitle, accentWord }) {
 
         {subtitle && (
           <motion.p
-            className="mt-6 text-ink-muted text-base md:text-lg max-w-2xl leading-relaxed"
+            className="mt-6 text-ink-secondary text-base md:text-lg max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
