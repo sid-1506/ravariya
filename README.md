@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/logo.png" alt="Ravariya Logo" width="120"/>
+<img src="public/assets/IMG_4634.PNG" alt="Ravariya Logo" width="120"/>
 
 # Ravariya Green Energy
 
