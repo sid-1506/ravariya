@@ -13,7 +13,9 @@
       "Bash(curl -s http://localhost:5173)",
       "Bash(npx --yes playwright screenshot --browser chromium http://localhost:5175 /tmp/home.png --viewport-size=1440,900)",
       "Bash(node -e ' *)",
-      "Bash(curl -s http://localhost:5175)"
+      "Bash(curl -s http://localhost:5175)",
+      "Bash(vsce --version)",
+      "Bash(code --version)"
     ]
   }
 }
