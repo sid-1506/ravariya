@@ -35,7 +35,7 @@ The project follows a standard React component-based architecture:
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="readmeimg/1.png" alt="Screenshot 1" width="800"/>
+  <img src="READMEIMG/1.png" alt="Screenshot 1" width="800"/>
 </p>
 <p align="center">
   <img src="readmeimg/2.png" alt="Screenshot 2" width="800"/>
